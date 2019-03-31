@@ -1,15 +1,9 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<<<<<<< HEAD
-  <meta charset="utf-8">
-  <title>Clients</title>
-  <link rel="stylesheet" type="text/css" media="all"  href="public/css/mystyle.css" />
-=======
     <meta charset="utf-8">
     <title>Clients</title>
     <link rel="stylesheet" type="text/css" media="all" href="/public/css/mystyle.css"/>
->>>>>>> bbbed5902f2b25dc4a73ac5e312017f574cb7e78
 </head>
 <body>
 <header>

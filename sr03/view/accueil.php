@@ -1,15 +1,9 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<<<<<<< HEAD
-  <meta charset="utf-8">
-  <title>Accueil</title>
-  <link rel="stylesheet" type="text/css" media="all"  href="public/css/mystyle.css" />
-=======
     <meta charset="utf-8">
     <title>Accueil</title>
     <link rel="stylesheet" type="text/css" media="all" href="/public/css/mystyle.css"/>
->>>>>>> bbbed5902f2b25dc4a73ac5e312017f574cb7e78
 </head>
 <body>
 <header>
@@ -19,8 +13,11 @@
     <article>
         <header>
             <h2>
-                Bienvenue <?php echo $_SESSION["connected_user"]["prenom"]; ?> <?php echo $_SESSION["connected_user"]["nom"]; ?></h2>
+                Bienvenue <?php echo $_SESSION["connected_user"]["prenom"]; ?> <?php echo $_SESSION["connected_user"]["nom"]; ?>
+            </h2>
+
         </header>
+
         <div class="form">
             <div>Nom : <?php echo $_SESSION["connected_user"]["nom"]; ?> </div>
             <div>Prenom : <?php echo $_SESSION["connected_user"]["prenom"]; ?> </div>
@@ -28,8 +25,6 @@
             <div>Numero Compte : <?php echo $_SESSION["connected_user"]["numero_compte"]; ?> </div>
             <div>Profil User : <?php echo $_SESSION["connected_user"]["profil_user"]; ?> </div>
             <div>Solde compte : <?php echo $_SESSION["connected_user"]["solde_compte"]; ?> </div>
-        </div>
-        <div class="form">
             <form method="GET">
                 <input type="hidden" name="action" value="messagerie">
                 <button>Messagerie</button>
