@@ -30,6 +30,7 @@ function findUserByLoginPwd($login, $pwd) {
 
     return $utilisateur;
 }
+}
 
 function findUserByCompte($compte)
 {

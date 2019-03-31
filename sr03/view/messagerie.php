@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Messages</title>
-  <link rel="stylesheet" type="text/css" media="all"  href="/public/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" media="all"  href="public/css/mystyle.css" />
 </head>
 <body>
   <header>
@@ -18,12 +18,14 @@
           <table>
             <?php
             foreach ($listeMessages as $cle => $unMessage) {
-              echo '<tr>';
-              echo '<td>'.$unMessage['id_user_to'].'</td>';
-              echo '<td>'.$unMessage['id_user_from'].'</td>';
-              echo '<td>'.$unMessage['sujet_msg'].'</td>';
-              echo '<td>'.$unMessage['corps_msg'].'</td>';
-              echo '</tr>';
+                if($unMessage['id_user_to'] == $_SESSION["connected_user"]["id_user"] || $unMessage['id_user_from'] == $_SESSION["connected_user"]["id_user"] ){
+                  echo '<tr>';
+                  echo '<td>'.$unMessage['id_user_to'].'</td>';
+                  echo '<td>'.$unMessage['id_user_from'].'</td>';
+                  echo '<td>'.$unMessage['sujet_msg'].'</td>';
+                  echo '<td>'.$unMessage['corps_msg'].'</td>';
+                  echo '</tr>';
+                }
             }
              ?>
           </table>
@@ -31,7 +33,7 @@
 
       <div class="form">
         <form method="POST" action="model/messageModel.php" >
-          <p>Sujet: <input type="text" name="Sujet" /></p>
+          <p>Sujet: <input type="text" name="sujet_msg" /></p>
           <p>Send to: <select name="user_to">
           <?php
             foreach ($listeUsers as $cle => $unUser) {
@@ -39,7 +41,8 @@
             }
              ?>
           </select></p>
-          <p>Corp: <textarea rows="10" cols="30"></textarea></p>
+          <p>Corps: <textarea name="corps_msg" rows="10" cols="30"></textarea></p>
+          <input type="hidden" name="user_from" value="<?php echo $_SESSION["connected_user"]["id_user"];?>">
           <button>Envoyer</button>
         </form>
       </div>
