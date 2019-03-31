@@ -13,7 +13,11 @@
       } else if ($_GET['action'] == 'virement') {
           virements();
       } else if ($_GET['action'] == 'clients') {
-          clients();
+          if($_SESSION["connected_user"]["profil_user"]=="CONSEILLER"){
+              clients();
+          }else{
+              home();
+          }
       } else if ($_GET['action'] == 'disconnect') {
           disconnect();
       }else if ($_GET['action'] == 'effectuerVirement') {

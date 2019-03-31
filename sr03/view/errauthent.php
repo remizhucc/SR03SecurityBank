@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Erreur authentification</title>
-  <link rel="stylesheet" type="text/css" media="all"  href="/sr03/public/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" media="all"  href="/public/css/mystyle.css" />
 </head>
 <body>
   <header>
