@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `messages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `messages` (
-  `id_msg` int(11) NOT NULL,
+  `id_msg` int(11) NOT NULL AUTO_INCREMENT,
   `id_user_to` int(11) DEFAULT NULL,
   `id_user_from` int(11) DEFAULT NULL,
   `sujet_msg` varchar(45) DEFAULT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE `messages` (
   KEY `id_user_from_idx` (`id_user_from`),
   CONSTRAINT `id_user_from` FOREIGN KEY (`id_user_from`) REFERENCES `users` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `id_user_to` FOREIGN KEY (`id_user_to`) REFERENCES `users` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+INSERT INTO `messages` VALUES (1,2,1,'test','test'),(2,1,1,'adads','ad'),(3,2,2,'qwe','qwe');
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-29 19:34:28
+-- Dump completed on 2019-04-01  2:51:38

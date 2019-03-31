@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id_user` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(45) NOT NULL,
   `mot_de_passe` varchar(45) NOT NULL,
   `profil_user` enum('CLIENT','CONSEILLER') NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE `users` (
   `solde_compte` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `login_UNIQUE` (`login`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'xiaoroubao1996','123456','CLIENT','JI','DONGHAO',4973019406073796,99999999);
+INSERT INTO `users` VALUES (1,'xiaoroubao1996','123456','CLIENT','JI','DONGHAO',4973019406073796,99999987),(2,'xiaochenchen1996','123456','CLIENT','ZHU','CHENYAN',4973017561478912,1012);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-29 19:34:28
+-- Dump completed on 2019-04-01  2:51:38
