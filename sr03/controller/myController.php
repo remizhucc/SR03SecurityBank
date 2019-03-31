@@ -32,6 +32,29 @@
       }
   }
 
+function effectuerVirement($compteDebite, $montant) {
+    if ($compteDebite == "" || $montant == "") {
+        $errmsg = "nullvalue";
+        require('view/virement.php');
+    } else {
+        $compteDebiteExist = findUserByCompte($compteDebite);
+        if($compteDebiteExist==false){
+            $errmsg = "Compte débité n'existe pas";
+            require('view/erraction.php');
+        }else{
+            $sign = effectuerVirementSQL($_SESSION["connected_user"]["numero_compte"],$compteDebite, $montant);
+            if($sign==true){
+                $utilisateur=findUserByCompte($_SESSION["connected_user"]["numero_compte"]);
+                $_SESSION["connected_user"] = $utilisateur;
+                require('view/virement.php');
+            }else{
+                $errmsg = "Erreur de virement";
+                require('view/erraction.php');
+            }
+        }
+    }
+}
+
   function home() {
       if (isLoggedOn()) {
         require('view/accueil.php');
