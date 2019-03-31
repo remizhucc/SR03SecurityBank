@@ -1,8 +1,5 @@
 <?php
-define('DB_HOST','127.0.0.1:8889');
-define('DB_USER','root');
-define('DB_PASSWD','root');
-define('DB_NAME','sr03');
+require('model/Constant.php');
 
 function findUserByLoginPwd($login, $pwd) {
   $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWD, DB_NAME);
