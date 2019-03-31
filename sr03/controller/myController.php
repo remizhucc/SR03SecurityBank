@@ -1,5 +1,6 @@
 <?php
   require ('model/myModel.php');
+  require ('model/messageModel.php');
 
   function isLoggedOn() {
       if(!isset($_SESSION["connected_user"]) || $_SESSION["connected_user"] == "") {
@@ -46,6 +47,8 @@
 
   function messages() {
       if (isLoggedOn()) {
+        $listeMessages = findAllMessages();
+        $listeUsers = findAllUsers();
           require('view/messagerie.php');
       }
   }
