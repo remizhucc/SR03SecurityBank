@@ -16,7 +16,9 @@
           clients();
       } else if ($_GET['action'] == 'disconnect') {
           disconnect();
-      } else {
+      }else if ($_GET['action'] == 'effectuerVirement') {
+          effectuerVirement($_GET['compteDebite'],$_GET['montant']);
+      }else {
           badaction();
       }
   }  else {

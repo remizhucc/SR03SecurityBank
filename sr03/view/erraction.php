@@ -1,20 +1,21 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Erreur action</title>
-  <link rel="stylesheet" type="text/css" media="all"  href="/sr03/public/css/mystyle.css" />
+    <meta charset="utf-8">
+    <title>Erreur action</title>
+    <link rel="stylesheet" type="text/css" media="all" href="/sr03/public/css/mystyle.css"/>
 </head>
 <body>
-  <header>
+<header>
     <h1>TD SR03</h1>
-  </header>
-  <main>
+</header>
+<main>
     <article>
-      <header>
-        <h2>Demande non conforme</h2>
-      </header>
+        <header>
+            <h2>Demande non conforme</h2>
+            <h2><?php echo $errmsg?></h2>
+        </header>
     </article>
-  </main>
+</main>
 </body>
 </html>
