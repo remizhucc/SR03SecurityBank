@@ -1,7 +1,7 @@
 <?php
-    define('DB_HOST','127.0.0.1');
+    define('DB_HOST','127.0.0.1:8889');
     define('DB_USER','root');
-    define('DB_PASSWD','jdh19960114');
+    define('DB_PASSWD','root');
     define('DB_NAME','sr03');
     if(isset($_POST["sujet_msg"])){
         insertMessage();
