@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Accueil</title>
-  <link rel="stylesheet" type="text/css" media="all"  href="/sr03/public/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" media="all"  href="/public/css/mystyle.css" />
 </head>
 <body>
   <header>
@@ -23,10 +23,12 @@
           <input type="hidden" name="action" value="virement">
           <button>Virement</button>
         </form>
+          <?php if($_SESSION["connected_user"]["profil_user"]=="CONSEILLER") :?>
         <form method="GET" >
           <input type="hidden" name="action" value="clients">
           <button>Clients</button>
         </form>
+          <?php endif; ?>
         <form method="GET" >
           <input type="hidden" name="action" value="disconnect">
           <button>Déconnexion</button>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Virement</title>
-    <link rel="stylesheet" type="text/css" media="all" href="/sr03/public/css/mystyle.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/public/css/mystyle.css"/>
 </head>
 <body>
 <header>
@@ -16,7 +16,6 @@
                 Bienvenue <?php echo $_SESSION["connected_user"]["prenom"]; ?> <?php echo $_SESSION["connected_user"]["nom"]; ?></h2>
         </header>
         <div>Solde: <?php echo $_SESSION["connected_user"]["solde_compte"]; ?></div>
-        <br>
         <h2>Virement</h2>
         <div class="form">
             <form method="GET">
@@ -31,17 +30,11 @@
                 </div>
                 <button>virement</button>
             </form>
-        </div>
-        <br>
-        <br>
-        <br>
-        <div class="form">
             <form method="GET" >
                 <input type="hidden" name="action" value="home">
                 <button>acceuil</button>
             </form>
         </div>
-
 
     </article>
 </main>
