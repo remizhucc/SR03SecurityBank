@@ -32,7 +32,7 @@
       </div>
 
       <div class="form">
-        <form method="POST" action="model/messageModel.php" >
+        <form method="POST" action="index.php" >
           <p>Sujet: <input type="text" name="sujet_msg" /></p>
           <p>Send to: <select name="user_to">
           <?php

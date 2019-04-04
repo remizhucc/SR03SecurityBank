@@ -1,10 +1,6 @@
 <?php
     require('model/Constant.php');
     
-    if(isset($_POST["sujet_msg"])){
-        insertMessage();
-    }
-    
     //find all messages
     function findAllMessages() {
         $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWD, DB_NAME);
@@ -36,13 +32,12 @@
             $utilisateur = false;
         } else {
             $query = "INSERT INTO `messages` (`id_user_to`, `id_user_from`, `sujet_msg`, `corps_msg`) VALUES ('". $_POST["user_to"]."', '".$_POST["user_from"]."', '". $_POST["sujet_msg"] ."', '". $_POST["corps_msg"] ."');";
-            echo $query;
             if (!$result = $mysqli->query($query)) {
                 echo 'Erreur requête BDD (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error;
                 $utilisateur = false;
             } else {
                 echo "<script>alert('send successfully!')</script>";
-                $url = "../index.php?action=messagerie"; 
+                $url = "index.php?action=messagerie"; 
                 echo "<script language='javascript' type='text/javascript'>"; 
                 echo "window.location.href='$url'"; 
                 echo "</script>"; 

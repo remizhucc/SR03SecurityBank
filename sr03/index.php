@@ -25,7 +25,9 @@
       }else {
           badaction();
       }
-  }  else {
+  } else if (isset($_POST["sujet_msg"])){
+        insertMessage();
+    }  else {
       // aucune action => accueil
       home();
   }
