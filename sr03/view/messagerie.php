@@ -43,6 +43,7 @@
           </select></p>
           <p>Corps: <textarea name="corps_msg" rows="10" cols="30"></textarea></p>
           <input type="hidden" name="user_from" value="<?php echo $_SESSION["connected_user"]["id_user"];?>">
+          <input type="hidden" name="action" value="messagerie">
           <button>Envoyer</button>
         </form>
       </div>
